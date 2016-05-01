@@ -1,0 +1,20 @@
+{
+  "name": "keystone-starter-custom",
+  "version": "0.0.0",
+  "homepage": "https://github.com/cleechtech/keystone-starter-custom",
+  "authors": [
+    "Connor Leech <connorleech@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.3",
+    "bootstrap": "~3.3.6"
+  }
+}

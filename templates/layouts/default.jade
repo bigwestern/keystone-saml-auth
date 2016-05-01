@@ -7,9 +7,10 @@ html
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 
-		title= title || 'Incubator Music'
+		title= title || 'Keystone Github Login'
 		//- link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
-
+		
+		link(href="/bower_components/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
 		link(href="/css/main.css", rel="stylesheet")
 
 		//- This file provides the default styling for the KeystoneJS Content Editor
@@ -40,8 +41,8 @@ html
 							span.icon-bar
 							span.icon-bar
 							span.icon-bar
-						a.navbar-brand(href='/') Incubator Music
-					.collapse.navbar-collapse
+						a.navbar-brand(href='/') Keystone Github Login
+					//- .collapse.navbar-collapse
 						//- ul.nav.navbar-nav.navbar-left
 						//- 	each link in navLinks
 						//- 		li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
@@ -61,14 +62,11 @@ html
 
 		//- FOOTER
 		#footer: .container
+			p This is the footer
 			if user && user.canAccessKeystone
-				p
-					a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI
+				User can access Keystone
 			else
-				p We have created a default Admin user for you with the email <strong>connorleech@gmail.com</strong> and the password <strong>connorleech</strong>.
-				p
-					a(href='/keystone/signin', style='margin-right: 10px').btn.btn-lg.btn-primary Sign in
-					|  to use the Admin UI.
+				p not user or not user can access keystone
 
 		//- JAVASCRIPT
 		script(src='/bower_components/jquery/dist/jquery.min.js')

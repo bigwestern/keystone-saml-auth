@@ -7,8 +7,6 @@ var keystone = require('keystone'),
 exports = module.exports = function(req, res) {
 	
 	var view = new keystone.View(req, res);
-
-	console.log('req.user: ' + req.user);
 	
 	// // Function to handle signin
 	// var doSignIn = function() {
@@ -16,20 +14,20 @@ exports = module.exports = function(req, res) {
 	// 	console.log('[auth.confirm] - Signing in user...');
 	// 	console.log('------------------------------------------------------------');
 		
-	// 	var onSuccess = function(user) {
-	// 		console.log('[auth.confirm] - Successfully signed in.');
-	// 		console.log('------------------------------------------------------------');
-	// 		return res.redirect('/profile');
-	// 	}
+		var onSuccess = function(user) {
+			console.log('[auth.confirm] - Successfully signed in.');
+			console.log('------------------------------------------------------------');
+			return res.redirect('/profile');
+		}
 		
-	// 	var onFail = function(err) {
-	// 		console.log('[auth.confirm] - Failed signing in.', err);
-	// 		console.log('------------------------------------------------------------');
-	// 		req.flash('error', 'Sorry, there was an issue signing you in, please try again.');
-	// 		return res.redirect('/');
-	// 	}
+		var onFail = function(err) {
+			console.log('[auth.confirm] - Failed signing in.', err);
+			console.log('------------------------------------------------------------');
+			req.flash('error', 'Sorry, there was an issue signing you in, please try again.');
+			return res.redirect('/');
+		}
 		
-	// 	keystone.session.signin(String(locals.existingUser._id), req, res, onSuccess, onFail);
+		keystone.session.signin(String(locals.existingUser._id), req, res, onSuccess, onFail);
 	
 	// }
 	
@@ -83,13 +81,8 @@ exports = module.exports = function(req, res) {
 	// 						last: locals.form['name.last']
 	// 					},
 	// 					email: locals.form.email,
-	// 					password: Math.random().toString(36).slice(-8),
 						
-	// 					state: 'enabled',
-						
-	// 					website: locals.form.website,
-						
-	// 					isVerified: true,
+
 						
 	// 					services: {}
 	// 				};

@@ -2,6 +2,15 @@
 
 A lightweight Keystone.js server with authentication via Passport
 
+### Requirements
+
+- Sign in with Github button
+- Authenticate users via Github OAuth2
+- If user has not signed in before, create a new user in database
+- If user has signed in before log the user in
+- profile page is only accessible to logged in users
+- after successful log in user is redirected to profile page
+
 ### Technologies
 
 - [Keystone.js](http://keystonejs.com/)
